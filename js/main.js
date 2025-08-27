@@ -83,7 +83,10 @@ function onMessageReceived(payload) {
 
         var avatarElement = document.createElement('i');
         // Take the first letter of the username and make it uppercase
-        var avatarText = document.createTextNode(message.sender[0]);
+        // var avatarText = document.createTextNode(message.sender[0]);
+        
+        // Take the first 2 letter of the username and make it uppercase
+        var avatarText = document.createTextNode(message.sender.substring(0, 2));
         avatarElement.appendChild(avatarText);
         avatarElement.style['background-color'] = getAvatarColor(message.sender);
 
