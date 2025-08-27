@@ -52,4 +52,22 @@ function onError(error) {
     connectingElement.style.color = 'red';
 }
 
+function sendMessage(event) {
+    var messageContent = messageInput.value.trim();
+    if(messageContent && stompClient) {
+        var chatMessage = {
+            sender: username,
+            content: messageInput.value,
+            type: 'CHAT'
+        };
+        stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
+        // Clear the input field
+        messageInput.value = '';
+    }
+    event.preventDefault();
+}
+
+usernameForm.addEventListener('submit', connect, true)
+messageForm.addEventListener('submit', sendMessage, true)
+
 
