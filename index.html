@@ -25,6 +25,30 @@
             </form>            
         </div>        
     </div>
+
+    <!-- div where user can see the chat messages and type new messages -->
+    <div id="chat-page" class="hidden">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>Welcome to MyChatApplikation!!</h2>
+            </div>
+            <div class="connecting">
+                Connecting...
+            </div>
+            <ul id="messageArea">
+                <!-- messages will be appended here -->
+            </ul>
+            <form id="messageForm" name="messageForm">
+                <div class="form-group">
+                    <div class="input-group clearfix">
+                        <!-- input field for typing messages and send button -->
+                        <input type="text" id="message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                        <button type="submit" class="primary">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>    
     
 </body>
 </html>
